@@ -18,9 +18,7 @@ content:
     path: _posts
     format: yaml-frontmatter
     subfolders: false
-    filename:
-      template: "{year}-{month}-{day}-{title}.md"
-      field: create
+    filename: "{year}-{month}-{day}-{title}.md"
     view:
       fields: [title, date, categories]
       primary: title
