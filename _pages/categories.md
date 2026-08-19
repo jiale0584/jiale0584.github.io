@@ -7,7 +7,7 @@ nav_order: 2
 description: Browse posts by category.
 ---
 
-{% assign known_categories = "AI,Mathematics,Engineering,Reading,Essays" | split: "," %}
+{% assign known_categories = "LLM,Mathematics,Full Stack,Humanities,Essays" | split: "," %}
 
 <ul class="post-list">
   {% for category in known_categories %}
