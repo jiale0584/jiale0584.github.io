@@ -1,0 +1,86 @@
+media:
+  name: blog-images
+  label: Blog images
+  input: assets/img/blog
+  output: /assets/img/blog
+  rename: safe
+  categories: [image]
+  extensions: [png, jpg, jpeg, webp, gif]
+
+settings:
+  content:
+    merge: true
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    subfolders: false
+    filename:
+      template: "{year}-{month}-{day}-{title}.md"
+      field: create
+    view:
+      fields: [title, date, categories]
+      primary: title
+      sort: [date, title]
+      search: [title, description, categories, tags]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: layout
+        type: string
+        default: post
+        hidden: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          time: true
+          format: yyyy-MM-dd HH:mm:ss
+      - name: description
+        label: Description
+        type: text
+      - name: categories
+        label: Category
+        type: select
+        required: true
+        description: One primary category. Stored as a Jekyll categories array.
+        options:
+          values:
+            - AI
+            - Mathematics
+            - Engineering
+            - Reading
+            - Essays
+          multiple: true
+          max: 1
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: Free-form topic tags. Add any tag without changing this config.
+      - name: toc
+        label: Table of Contents
+        type: object
+        fields:
+          - name: sidebar
+            label: Sidebar
+            type: select
+            default: left
+            options:
+              values:
+                - left
+                - right
+      - name: body
+        label: Body
+        type: code
+        options:
+          format: markdown

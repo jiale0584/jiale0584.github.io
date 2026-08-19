@@ -3,7 +3,7 @@ layout: page
 permalink: /tags/
 title: Tags
 nav: true
-nav_order: 2
+nav_order: 3
 description: All tags used on this blog.
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: Example Post About Agentic RL
 date: 2026-08-19 10:00:00
 description: A short placeholder note used to check Markdown, headings, and the left table of contents.
+categories: [AI]
 tags: [notes]
 giscus_comments: false
 related_posts: false

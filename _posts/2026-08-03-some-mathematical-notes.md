@@ -3,6 +3,7 @@ layout: post
 title: Some Mathematical Notes
 date: 2026-08-03 10:00:00
 description: A short placeholder for inline and display MathJax.
+categories: [Mathematics]
 tags: [math, notes]
 giscus_comments: false
 related_posts: false

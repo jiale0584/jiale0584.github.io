@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /about/
 nav: true
-nav_order: 3
+nav_order: 4
 selected_papers: false
 social: false
 
