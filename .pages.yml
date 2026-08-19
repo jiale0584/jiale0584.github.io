@@ -53,10 +53,10 @@ content:
         description: One primary category. Stored as a Jekyll categories array.
         options:
           values:
-            - AI
+            - LLM
             - Mathematics
-            - Engineering
-            - Reading
+            - Full Stack
+            - Humanities
             - Essays
           multiple: true
           max: 1

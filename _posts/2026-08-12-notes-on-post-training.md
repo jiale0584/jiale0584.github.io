@@ -3,7 +3,7 @@ layout: post
 title: Notes on Post-training
 date: 2026-08-12 10:00:00
 description: A short placeholder for Python and Bash code blocks.
-categories: [AI]
+categories: [LLM]
 tags: [code, notes]
 giscus_comments: false
 related_posts: false
