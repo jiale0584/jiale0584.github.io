@@ -5,10 +5,16 @@ on:
     branches:
       - master
       - main
+    paths-ignore:
+      - "_posts/**"
+      - "assets/img/blog/**"
   push:
     branches:
       - master
       - main
+    paths-ignore:
+      - "_posts/**"
+      - "assets/img/blog/**"
 
 jobs:
   check:
