@@ -91,10 +91,15 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+      - name: Install ImageMagick 🖼
+        timeout-minutes: 8
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Install nbconvert 🐍
+        timeout-minutes: 8
+        run: pip3 install --upgrade nbconvert
+      - name: Build site 🔧
+        timeout-minutes: 10
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
