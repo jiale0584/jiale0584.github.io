@@ -92,14 +92,21 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Install ImageMagick 🖼
-        timeout-minutes: 8
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+        timeout-minutes: 4
+        continue-on-error: true
+        run: |
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update -o Acquire::Retries=3 -o Acquire::http::Timeout=20
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends imagemagick
       - name: Install nbconvert 🐍
         timeout-minutes: 8
         run: pip3 install --upgrade nbconvert
       - name: Build site 🔧
         timeout-minutes: 10
         run: |
+          if ! command -v convert >/dev/null 2>&1; then
+            echo "ImageMagick unavailable; disabling responsive images for this build"
+            sed -i 's/^  enabled: true # enables responsive images/  enabled: false # enables responsive images/' _config.yml
+          fi
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
