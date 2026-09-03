@@ -1,9 +1,9 @@
 ---
 layout: default
-permalink: /
-title: Blog
-description: Notes on AI, mathematics, systems, and things I am learning.
-lang: en
+permalink: /zh/
+title: 博客
+description: 关于人工智能、数学、系统和学习过程的笔记。
+lang: zh-CN
 nav: false
 nav_order: 1
 language_alternates:
@@ -17,13 +17,14 @@ pagination:
 <div class="post">
 
 {% assign blog_name_size = site.blog_name | size %}
-{% assign blog_description_size = site.blog_description | size %}
+{% assign blog_description = "关于人工智能、数学、系统和学习过程的笔记。" %}
+{% assign blog_description_size = blog_description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
   <div class="header-bar">
     <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
+    <h2>{{ blog_description }}</h2>
   </div>
   {% endif %}
 
@@ -82,9 +83,9 @@ pagination:
                     {% assign year = post.date | date: "%Y" %}
 
                     <p class="post-meta">
-                      {{ read_time }} min read &nbsp; &middot; &nbsp;
+                      阅读约 {{ read_time }} 分钟 &nbsp; &middot; &nbsp;
                       <a href="{{ year | prepend: '/blog/' | relative_url }}">
-                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} 年</a>
                     </p>
                   </div>
                 </div>
@@ -139,15 +140,15 @@ pagination:
       </h3>
       <p>{{ post.description }}</p>
       <p class="post-meta">
-        {{ read_time }} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %d, %Y' }}
+        阅读约 {{ read_time }} 分钟 &nbsp; &middot; &nbsp;
+        {{ post.date | date: '%Y 年 %m 月 %d 日' }}
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}
       </p>
       <p class="post-tags">
         <a href="{{ year | prepend: '/blog/' | relative_url }}">
-          <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+          <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} 年</a>
 
           {% if tags != "" %}
           &nbsp; &middot; &nbsp;
@@ -177,7 +178,7 @@ pagination:
 </div>
 
   <div class="col-sm-3">
-    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="image">
+    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="文章缩略图">
   </div>
 </div>
 {% endif %}
