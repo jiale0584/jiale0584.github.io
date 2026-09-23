@@ -1,0 +1,18 @@
+.post-content[lang="zh"] #markdown-content > p {
+  text-indent: 2em;
+}
+
+.post-content[lang="zh"] #markdown-content > p:has(> img:only-child),
+.post-content[lang="zh"] #markdown-content > p:has(mjx-container[display="true"]),
+.post-content[lang="zh"] li p,
+.post-content[lang="zh"] blockquote p,
+.post-content[lang="zh"] figcaption,
+.post-content[lang="zh"] td p,
+.post-content[lang="zh"] th p {
+  text-indent: 0;
+}
+
+.post-content #markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
