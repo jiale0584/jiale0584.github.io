@@ -45,7 +45,10 @@
 } /* Name.Builtin */ /* Name.Class */
 .highlight .no {
   color: #40ffff;
-} /* Name.Constant */ /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */
+} /* Name.Constant */
+.highlight .nd {
+  color: #ffa500;
+} /* Name.Decorator */ /* Name.Entity */ /* Name.Exception */
 .highlight .nf {
   color: #447fcf;
 } /* Name.Function */
