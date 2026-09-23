@@ -1,8 +1,8 @@
 ---
-{ layout: post, date: 2026-09-03 20:13:32, giscus_comments: false, related_posts: false, toc: { sidebar: left }, title: Transformer 架构, description: "", categories: [ LLM ], tags: [], lang: zh }
+{ layout: post, date: 2026-09-03 20:13:32, giscus_comments: false, related_posts: false, toc: { sidebar: left }, title: Transformer 架构复习, description: "", categories: [ LLM ], tags: [], lang: zh }
 ---
 
-复习的流程主要是通过一些重要的图，对这些图进行讲解，然后顺带回忆知识。因为我懒得对博客进行特别论文化的整理。很多东西基本上就是口述。
+复习的流程主要是通过一些重要的图，对这些图进行讲解，然后顺带回忆知识。
 
 我们先开始我们的第一张图。
 
