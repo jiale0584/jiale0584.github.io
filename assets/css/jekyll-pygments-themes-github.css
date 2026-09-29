@@ -35,7 +35,10 @@
 } /* Name.Tag */ /* Name.Variable */ /* Operator.Word */
 .highlight .w {
   color: #bbbbbb;
-} /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */ /* Literal.Number.Integer */
+} /* Text.Whitespace */ /* Literal.Number.Float */ /* Literal.Number.Hex */
+.highlight .mi {
+  color: #009999;
+} /* Literal.Number.Integer */
 .highlight .mo {
   color: #009999;
 } /* Literal.Number.Oct */ /* Literal.String.Backtick */ /* Literal.String.Char */ /* Literal.String.Doc */ /* Literal.String.Double */ /* Literal.String.Escape */
