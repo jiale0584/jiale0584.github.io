@@ -14,7 +14,7 @@ Jekyll::Hooks.register :posts, :post_convert do |post|
     raise Jekyll::Errors::FatalException, "Missing Blog Writer rendered body: #{rendered_path}"
   end
 
-  post.output = File.read(rendered_file, encoding: "UTF-8")
+  post.content = File.read(rendered_file, encoding: "UTF-8")
 end
 
 Jekyll::Hooks.register :posts, :post_render do |post|
