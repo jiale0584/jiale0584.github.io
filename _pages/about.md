@@ -1,21 +1,14 @@
 ---
-layout: about
+layout: page
 title: About
 permalink: /about/
 nav: true
-nav_order: 4
-selected_papers: false
-social: false
-
-announcements:
-  enabled: false
-
-latest_posts:
-  enabled: false
+nav_order: 2
+lang: en
+language_alternates:
+  en: /about/
+  zh-CN: /zh/about/
+  x-default: /about/
 ---
 
-I'm Jiale.
-
-I write notes on AI, mathematics, systems, and things I am learning.
-
-More personal details will be added later.
+I'm jiale. This blog is dedicated exclusively to Large Language Models (LLMs) and related technologies.

@@ -59,9 +59,37 @@ module BilingualSite
     return unless page.output.include?("</head>")
 
     inject_alternates(page)
+    inject_home_brand(page)
+    route_about_navigation(page)
     inject_navigation(page)
+    normalize_identity(page)
     page.output.sub!("</head>", "#{styles}  </head>")
     page.output.sub!("</body>", "#{script(page)}  </body>")
+  end
+
+  def inject_home_brand(page)
+    return unless page.url == "/"
+
+    navbar = page.output.index('<nav id="navbar"')
+    container_end = page.output.index(">", page.output.index('<div class="container">', navbar))
+    return unless container_end
+
+    title = CGI.escapeHTML(page.site.config["title"].to_s)
+    brand = %(<a class="navbar-brand title font-weight-lighter" href="#{route(page.site, '/')}">#{title}</a>)
+    page.output.insert(container_end + 1, brand)
+  end
+
+  def route_about_navigation(page)
+    return unless page.data["lang"].to_s.downcase.start_with?("zh")
+
+    english_url = CGI.escapeHTML(route(page.site, "/about/"))
+    chinese_url = CGI.escapeHTML(route(page.site, "/zh/about/"))
+    page.output.sub!(%(<a class="nav-link" href="#{english_url}">About), %(<a class="nav-link" href="#{chinese_url}">About))
+  end
+
+  def normalize_identity(page)
+    page.output.gsub!('content="jiale "', 'content="jiale"')
+    page.output.gsub!(%r{© Copyright (\d{4})\s+jiale\s+\.\s*}, '© Copyright \1 jiale.')
   end
 
   def inject_alternates(page)

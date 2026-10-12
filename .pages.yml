@@ -20,10 +20,10 @@ content:
     subfolders: false
     filename: "{year}-{month}-{day}-{slug}.md"
     view:
-      fields: [title, date, categories]
+      fields: [title, date]
       primary: title
       sort: [date, title]
-      search: [title, description, categories, tags]
+      search: [title, description]
       default:
         sort: date
         order: desc
@@ -46,25 +46,6 @@ content:
       - name: description
         label: Description
         type: text
-      - name: categories
-        label: Category
-        type: select
-        required: true
-        description: One primary category. Stored as a Jekyll categories array.
-        options:
-          values:
-            - LLM
-            - Mathematics
-            - Full Stack
-            - Humanities
-            - Essays
-          multiple: true
-          max: 1
-      - name: tags
-        label: Tags
-        type: string
-        list: true
-        description: Free-form topic tags. Add any tag without changing this config.
       - name: toc
         label: Table of Contents
         type: object

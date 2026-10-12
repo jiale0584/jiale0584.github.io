@@ -13,6 +13,14 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     %(<article class="post-content" lang="#{language}">)
   )
 
+  year = post.date.strftime("%Y")
+  year_url = "#{post.site.baseurl}/blog/#{year}/"
+  post.output.sub!(%r{<p class="post-tags">.*?</p>}m, <<~HTML.chomp)
+    <p class="post-tags">
+      <a href="#{year_url}"><i class="fa-solid fa-calendar fa-sm"></i> #{year}</a>
+    </p>
+  HTML
+
   stylesheet = "#{post.site.baseurl}/assets/css/article-content.css"
   post.output.sub!(
     "</head>",

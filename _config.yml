@@ -2,16 +2,14 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: K # the website title (if blank, full name will be used instead)
-first_name: Jiale
+title: "JiaLe's Blog" # the website title (if blank, full name will be used instead)
+first_name: jiale
 middle_name:
 last_name:
-contact_note: >
-  Placeholder contact note. Replace this later.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Notes on AI, mathematics, systems, and things I am learning.
+  Technical notes on Large Language Models, agents, agentic reinforcement learning, model training, inference, and engineering.
 footer_text:
-keywords: AI, mathematics, systems, notes
+keywords: large language models, LLM, agents, agentic reinforcement learning, model training, inference, AI engineering
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ✒️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
@@ -134,8 +132,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: K # blog_name will be displayed in your blog page
-blog_description: Notes on AI, mathematics, systems, and things I am learning.
+blog_name: "JiaLe's Blog" # blog_name will be displayed in your blog page
+blog_description:
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -329,16 +327,11 @@ terser:
 
 jekyll-archives:
   posts:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: [year]
     permalinks:
       year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
   books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-
-display_tags: ["notes", "math", "code"] # these tags will be displayed on the front page of your blog
-display_categories: [] # these categories will be displayed on the front page of your blog
+    enabled: [year]
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
