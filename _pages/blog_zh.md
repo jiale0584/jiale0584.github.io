@@ -19,8 +19,8 @@ pagination:
 {% assign blog_name_size = site.blog_name | size %}
 {% if blog_name_size > 0 %}
 
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
+  <div class="header-bar" style="padding-top: 1rem; padding-bottom: 1.5rem">
+    <h1 style="font-size: clamp(1.875rem, 5vw, 2.5rem)">{{ site.blog_name }}</h1>
   </div>
   {% endif %}
 
