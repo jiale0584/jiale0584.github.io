@@ -6,11 +6,9 @@ require "json"
 Jekyll::Hooks.register :posts, :post_render do |post|
   next unless post.output_ext == ".html"
 
-  language_value = post.data["language"] || post.data["lang"]
-  language = ["zh", "zh-CN"].include?(language_value) ? "zh" : "en"
   post.output.sub!(
     '<article class="post-content">',
-    %(<article class="post-content" lang="#{language}">)
+    '<article class="post-content" lang="zh-CN">'
   )
 
   year = post.date.strftime("%Y")

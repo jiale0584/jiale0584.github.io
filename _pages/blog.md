@@ -2,14 +2,10 @@
 layout: default
 permalink: /
 title: Blog
-description: Technical notes on Large Language Models, agents, agentic reinforcement learning, model training, inference, and engineering.
-lang: en
+description: 关于大语言模型、Agent、Agentic RL、模型训练、推理与工程实现的技术笔记。
+lang: zh-CN
 nav: false
 nav_order: 1
-language_alternates:
-  en: /
-  zh-CN: /zh/
-  x-default: /
 pagination:
   enabled: false
 ---
@@ -52,9 +48,9 @@ pagination:
                     {% assign year = post.date | date: "%Y" %}
 
                     <p class="post-meta">
-                      {{ read_time }} min read &nbsp; &middot; &nbsp;
+                      阅读约 {{ read_time }} 分钟 &nbsp; &middot; &nbsp;
                       <a href="{{ year | prepend: '/blog/' | relative_url }}">
-                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} 年</a>
                     </p>
                   </div>
                 </div>
@@ -106,15 +102,15 @@ pagination:
       </h3>
       <p>{{ post.description }}</p>
       <p class="post-meta">
-        {{ read_time }} min read &nbsp; &middot; &nbsp;
-        {{ post.date | date: '%B %d, %Y' }}
+        阅读约 {{ read_time }} 分钟 &nbsp; &middot; &nbsp;
+        {{ post.date | date: '%Y 年 %m 月 %d 日' }}
         {% if post.external_source %}
         &nbsp; &middot; &nbsp; {{ post.external_source }}
         {% endif %}
       </p>
       <p class="post-tags">
         <a href="{{ year | prepend: '/blog/' | relative_url }}">
-          <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
+          <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} 年</a>
 
     </p>
 
@@ -123,7 +119,7 @@ pagination:
 </div>
 
   <div class="col-sm-3">
-    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="image">
+    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="文章缩略图">
   </div>
 </div>
 {% endif %}
