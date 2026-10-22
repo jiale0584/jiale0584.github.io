@@ -78,9 +78,9 @@ jobs:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
       - name: Setup Node 🧰
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24.22.1"
           cache: "npm"
       - name: Install JS deps 📦
         run: npm ci

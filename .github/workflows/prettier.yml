@@ -24,7 +24,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
       - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.22.1"
       - name: Install Prettier 💾
         run: npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
       - name: Prettier Check 🔎
